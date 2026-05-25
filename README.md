@@ -1,4 +1,4 @@
-# Restaurant Review AI Agent
+# RAG-Based AI Agent
 
 A **RAG (Retrieval-Augmented Generation)** chatbot that answers natural language questions about a pizza restaurant using real customer reviews, all running with [Ollama](https://ollama.com).
 
