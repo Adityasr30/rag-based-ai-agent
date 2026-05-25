@@ -1,8 +1,6 @@
-# 🍕 Restaurant Review AI Agent
+# Restaurant Review AI Agent
 
-A **RAG (Retrieval-Augmented Generation)** chatbot that answers natural language questions about a pizza restaurant using real customer reviews — all running **100% locally** with [Ollama](https://ollama.com).
-
-No API keys. No cloud calls. Just your machine.
+A **RAG (Retrieval-Augmented Generation)** chatbot that answers natural language questions about a pizza restaurant using real customer reviews, all running with [Ollama](https://ollama.com).
 
 ---
 
@@ -18,9 +16,9 @@ ChromaDB Vector Store  ──►  Top-K relevant reviews
 Ollama LLM (phi3)  ──►  Answer grounded in real reviews
 ```
 
-1. **Ingestion** — Customer reviews from `data/restaurant_reviews.csv` are embedded using `mxbai-embed-large` and stored in a local ChromaDB vector store (built once, reused every run).
-2. **Retrieval** — For each question, the 5 most semantically relevant reviews are fetched.
-3. **Generation** — A local LLM (`phi3`) reads those reviews and answers the question.
+1. **Ingestion** - Customer reviews from `data/restaurant_reviews.csv` are embedded using `mxbai-embed-large` and stored in a local ChromaDB vector store (built once, reused every run).
+2. **Retrieval** - For each question, the 5 most semantically relevant reviews are fetched.
+3. **Generation** - A local LLM (`phi3`) reads those reviews and answers the question.
 
 ---
 
@@ -63,7 +61,7 @@ On the **first run**, the vector store is built automatically from the CSV. Subs
 ## Example
 
 ```
-🍕  Restaurant Review AI Agent
+   Restaurant Review AI Agent
    Powered by Ollama + phi3
    Type 'q' or 'quit' to exit
 
@@ -82,9 +80,10 @@ for the portion size. Overall, the majority lean positive on value.
 
 ```
 restaurant-review-agent/
-├── main.py                     # CLI entry point & conversation loop
-├── vector.py                   # Vector store setup and retriever
-├── config.py                   # Centralized configuration
+├── scripts/
+│   ├── main.py                       # CLI entry point & conversation loop
+│   └── vector.py                     # Vector store setup and retriever
+│   └── config.py                     # Centralized configuration
 ├── requirements.txt
 ├── .gitignore
 ├── data/
@@ -106,7 +105,7 @@ All settings live in `config.py`:
 | `DB_LOCATION`    | `./chroma_langchain_db` | ChromaDB persistence directory    |
 | `RETRIEVER_K`    | `5`                  | Number of reviews retrieved per query|
 
-You can swap in any Ollama-compatible model — for example, replace `phi3` with `llama3` for more capable responses.
+You can swap in any Ollama-compatible model - for example, replace `phi3` with `llama3` for more capable responses.
 
 ---
 
