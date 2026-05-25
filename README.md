@@ -84,10 +84,10 @@ restaurant-review-agent/
 │   ├── main.py                       # CLI entry point & conversation loop
 │   └── vector.py                     # Vector store setup and retriever
 │   └── config.py                     # Centralized configuration
-├── requirements.txt
-├── .gitignore
 ├── data/
 │   └── restaurant_reviews.csv  # Source reviews dataset
+├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
